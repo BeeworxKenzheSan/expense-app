@@ -1,14 +1,24 @@
 // more expenses components will be added here
 import { ExpenseItem } from "../expense-item/ExpenseItem";
+import PropTypes from "prop-types";
 
-const Expenses = () => {
+export const Expenses = ({ expenses }) => {
   return (
     <ul>
-      {[].map(() => {
-        return <ExpenseItem />;
+      {expenses.map((item) => {
+        return (
+          <ExpenseItem
+            key={item.id}
+            title={item.title}
+            date={item.date}
+            price={item.price}
+          />
+        );
       })}
     </ul>
   );
 };
 
-export default Expenses;
+Expenses.propTypes = {
+  expenses: PropTypes.array.isRequired,
+};
