@@ -1,10 +1,18 @@
 import PropTypes from "prop-types";
+import css from "./FormInput.module.css";
 
 export const FormInput = ({ labelName, placeholder, inputType, id }) => {
   return (
     <div>
-      <label htmlFor={id}>{labelName}</label>
-      <input type={inputType} placeholder={placeholder || "..."} id={id} />
+      <label className={css.formLabel} htmlFor={id}>
+        {labelName}
+      </label>
+      <input
+        className={css.formInput}
+        type={inputType}
+        placeholder={placeholder || "..."}
+        id={id}
+      />
     </div>
   );
 };
