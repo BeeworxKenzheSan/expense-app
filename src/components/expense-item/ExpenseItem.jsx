@@ -4,7 +4,7 @@ import css from "./ExpenseItem.module.css";
 export const ExpenseItem = ({ title, date, price }) => {
   return (
     <div className={css.expenseItemContainer}>
-      <div className={css.expenseItemDate}>{date.toISOString()}</div>
+      <div className={css.expenseItemDate}>{date.toString()}</div>
       <div className={css.expenseItemTitle}>{title}</div>
       <div className={css.expenseItemPrice}>{price}</div>
     </div>

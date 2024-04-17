@@ -2,10 +2,10 @@ import { useState } from "react";
 import Button from "../UI/Button/Button";
 import { FormInput } from "../UI/FormInput/FormInput";
 import css from "./ExpenseForm.module.css";
-
 import PropTypes from "prop-types";
+import { generateUniqueID } from "../../utils/helpers";
 
-export const ExpenseForm = ({ onShowForm }) => {
+export const ExpenseForm = ({ onShowForm, onAdd }) => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState(0);
   const [date, setDate] = useState(null);
@@ -28,6 +28,13 @@ export const ExpenseForm = ({ onShowForm }) => {
 
   const saveHandler = (event) => {
     event.preventDefault();
+    const expenseData = {
+      title,
+      price,
+      date,
+      id: generateUniqueID(),
+    };
+    onAdd(expenseData);
     // const title = document.getElementById("title").value;
     // const price = document.getElementById("price").value;
     // const date = document.getElementById("date").value;
@@ -78,4 +85,5 @@ export const ExpenseForm = ({ onShowForm }) => {
 
 ExpenseForm.propTypes = {
   onShowForm: PropTypes.func.isRequired,
+  onAdd: PropTypes.func.isRequired,
 };
