@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../UI/Button/Button";
 import { ExpenseForm } from "../expense-form/ExpenseForm";
 import css from "./NewExpense.module.css";
+
 export const NewExpense = () => {
   const [showForm, setShowForm] = useState(false);
   const newExpenseHandler = () => {
