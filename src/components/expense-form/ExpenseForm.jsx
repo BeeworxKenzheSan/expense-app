@@ -31,7 +31,7 @@ export const ExpenseForm = ({ onShowForm, onAdd }) => {
     const expenseData = {
       title,
       price,
-      date,
+      date: new Date(date),
       id: generateUniqueID(),
     };
     onAdd(expenseData);
