@@ -8,14 +8,14 @@ function App() {
       // Страхование автомобилей
       title: "Car Insurance",
       price: 300,
-      date: "2024-03-01",
+      date: new Date(),
       id: "f1",
     },
     {
       // Медицинское страхование
       title: "Health Insurance",
       price: 400,
-      date: "2024-03-01",
+      date: new Date(),
       id: "f2",
     },
   ]);
